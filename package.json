@@ -2,6 +2,14 @@
   "name": "node-project_01",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/prititurkar/API01#readme",
+  "bugs": {
+    "url": "https://github.com/prititurkar/API01/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prititurkar/API01.git"
+  },
   "license": "ISC",
   "author": "priti turkar",
   "type": "commonjs",
