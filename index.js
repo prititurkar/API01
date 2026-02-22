@@ -14,13 +14,30 @@ app.get('/users', (req, res) => {
 });
 
 //Rest API
-app.get("/api/users",(req, res) =>{
+app.get("/api/usres",(req, res) =>{
     return res.json(users);
 });
 
-app.get("/api/users/:id", (req, res) =>{
+app.route("/api/users/:id").get((req, res) =>{
     const id =Number(req.params.id);
     const user = users.find(user => user.id ===id);
     return res.json(user);
+})
+.patch((req, res)=>{
+    //edit user with id
+   return res.json({status: "pending"})
+})
+.delete((req, res)=>{
+    //delete user with id
+    return res.json({status: "pending"});
 });
+
+
+app.post("/api/users", (req, res) => {
+    //tood create new user 
+    return res.json({ status: "pending"});
+
+});
+
+
 app.listen(PORT, ()=> console.log(`Server started at PORT: ${PORT}`));
