@@ -8,10 +8,14 @@ const PORT = 8000;
 app.use(express.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
+ 
     fs.appendFile(
+       
         "log.txt",
+       
          `\n${Date.now()}: ${req.method}:${req.path}`,
-     (err, data) => {
+     (err) => {
+        if(err) console.log(err);
          next();
          }
         );

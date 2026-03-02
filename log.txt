@@ -9,3 +9,25 @@
 1772100555272: GET:/api/users/1002
 
 1772100718828: GET:/api/users/1001
+1772100863633: GET:/api/users
+1772101825755: GET:/api/users/1002
+1772101879460: GET:/api/users
+1772102175499: GET:/api/users
+1772102506808: GET:/api/users
+1772102904623: GET:/api/users
+1772102908476: GET:/api/users
+1772102909626: GET:/api/users
+1772102910892: GET:/api/users
+1772103287810: GET:/api/users
+1772103333289: GET:/api/users
+1772103335344: GET:/api/users
+1772437906000: GET:/users
+1772437906228: GET:/favicon.ico
+1772437921814: GET:/users
+1772437924394: GET:/api/users/1
+1772437924955: GET:/favicon.ico
+1772437930990: GET:/users
+1772437945512: GET:/api/users
+1772437965022: GET:/.well-known/appspecific/com.chrome.devtools.json
+1772438070953: GET:/api/users
+1772438118190: GET:/users
