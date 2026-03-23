@@ -13,7 +13,7 @@ app.use((req, res, next) => {
        
         "log.txt",
        
-         `\n${Date.now()}: ${req.method}:${req.path}`,
+         `\n${Date.now()}:${req.ip} ${req.method}:${req.path}`,
      (err) => {
         if(err) console.log(err);
          next();
@@ -44,6 +44,8 @@ app.get('/users', (req, res) => {
 
 //Rest API
 app.get("/api/users", (req, res) => {
+    // console.log(req.header);
+    res.setHeader("X-MyName","priti turkar");//custom header
     // console.log("I am in get route",req.myUserName);
     return res.json(users);
 });
@@ -51,6 +53,7 @@ app.get("/api/users", (req, res) => {
 app.route("/api/users/:id").get((req, res) => {
     const id = Number(req.params.id);
     const user = users.find(user => user.id === id);
+    if(!user) return res.status(404).json({error: "user not found"});
     return res.json(user);
 })
     .patch((req, res) => {
@@ -64,9 +67,12 @@ app.route("/api/users/:id").get((req, res) => {
 
 app.post("/api/users", (req, res) => {
     const body = req.body;
+    if(!body || !body.name || !body.lastname){
+        return res.status(400).json({msg: 'All fields are req...'});
+     }
     users.push({ ...body, id: users.length + 1 });
     fs.writeFile('./MOCK_DATA.json', JSON.stringify(users), (err, data) => {
-        return res.json({ status: "success", id: users.length });
+        return res.status(201).json({ status: "success", id: users.length });
     })
 
 });
